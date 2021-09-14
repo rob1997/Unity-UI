@@ -16,7 +16,43 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: b6cf7b524bf671545a4bec79032e986f
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: a24417f7b259b22499447893aac968ea
+    m_Address: Assets/Prefabs/UiRoot.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: d73af8c768f6e224e9eaf052f8dbf5a2
+    m_Address: Assets/Prefabs/Home.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: ee916f45be51eb948b45dc472f38143c
+    m_Address: Assets/Prefabs/Settings.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: c56c9b4862da45146833606044e778b5
+    m_Address: Assets/Prefabs/Window.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: f0781a5a5ed2bc54a8b17a1a67a08b4a
+    m_Address: Assets/Prefabs/Menus/TopBarMenu.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: b1527e49087a38c4689769d8f211b17b
+    m_Address: Assets/Prefabs/Menus/BottomBarMenu.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 10a91ff5420c7d7459c7b472bbc9e7f9, type: 2}
   m_SchemaSet:
