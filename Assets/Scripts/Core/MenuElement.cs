@@ -30,6 +30,8 @@ public class MenuElement : UiElement
     public void Initialize(Region region)
     {
         _region = region;
+        
+        _region.transition.Initialize(this);
     }
     
     public void Activate()
@@ -44,8 +46,6 @@ public class MenuElement : UiElement
     public void Deactivate()
     {
         IsActive = false;
-        
-        gameObject.SetActive(false);
     }
 
     public void Remove()
@@ -60,6 +60,8 @@ public class MenuElement : UiElement
     public void Cache()
     {
         if (IsActive) Deactivate();
+        
+        gameObject.SetActive(false);
         
         _destroyCacheCoroutine = _region.StartCoroutine(WaitThenRemove());
     }

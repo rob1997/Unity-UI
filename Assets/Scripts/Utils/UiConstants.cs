@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public static class UiConstants
 {
+    #region MENU
+
     public enum LayerType
     {
         Main,
@@ -33,7 +36,9 @@ public static class UiConstants
 
     public enum UnloadMode
     {
+        //destroy
         Remove,
+        //disable
         Cache,
     }
 
@@ -45,4 +50,6 @@ public static class UiConstants
         MenuType.TopBar,
         MenuType.BottomBar,
     };
+
+    #endregion
 }

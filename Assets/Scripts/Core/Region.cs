@@ -1,12 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class Region : MonoBehaviour
 {
+    public Transition transition = new Transition();
+    
     [SerializeField] private UiConstants.RegionType regionType;
 
     private List<MenuElement> _menus = new List<MenuElement>();
@@ -18,7 +21,7 @@ public class Region : MonoBehaviour
     public List<MenuElement> Menus => _menus;
 
     public Layer Layer => _layer;
-    
+
     public void Initialize(Layer layer)
     {
         _layer = layer;
@@ -43,15 +46,20 @@ public class Region : MonoBehaviour
 
     public void UnloadMenu(MenuElement menu)
     {
-        switch (menu.UnloadMode)
+        if (menu.IsActive) menu.Deactivate();
+        
+        transition.Unload(menu, delegate
         {
-            case UiConstants.UnloadMode.Remove:
-                menu.Remove();
-                break;
-            case UiConstants.UnloadMode.Cache:
-                menu.Cache();
-                break;
-        }
+            switch (menu.UnloadMode)
+            {
+                case UiConstants.UnloadMode.Remove:
+                    menu.Remove();
+                    break;
+                case UiConstants.UnloadMode.Cache:
+                    menu.Cache();
+                    break;
+            }
+        });
     }
     
     public void Activate(MenuElement menu)
@@ -67,10 +75,16 @@ public class Region : MonoBehaviour
 
         if (activeMenu != null)
         {
+            activeMenu.Deactivate();
+
             UnloadMenu(activeMenu);
+            
+//            UnloadMenu(activeMenu);
         }
         
         menu.Activate();
+
+        transition.Load(menu, delegate {  });
     }
 
     public void Activate(UiConstants.MenuType menuType)
