@@ -5,9 +5,13 @@
     <e p="C:\Users\Robel\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_Unity-UI.553717634.00" t="ExcludeRecursive" />
     <e p="C:\Users\Robel\Documents\Unity\Unity-UI" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Editor" t="Include">
+          <e p="GenericDictionaryPropertyDrawer.cs" t="Include" />
+        </e>
         <e p="Plugins" t="Include">
           <e p="Demigiant" t="Include">
             <e p="DOTween" t="Include">
@@ -50,6 +54,33 @@
               <e p="ProceduralImage.cs" t="Include" />
               <e p="ProceduralImageModifier.cs" t="Include" />
             </e>
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="Core" t="Include">
+            <e p="Layer.cs" t="Include" />
+            <e p="MenuElement.cs" t="Include" />
+            <e p="Region.cs" t="Include" />
+            <e p="Transition.cs" t="Include" />
+            <e p="UiElement.cs" t="Include" />
+            <e p="UiManager.cs" t="Include" />
+            <e p="UiRoot.cs" t="Include" />
+          </e>
+          <e p="Menus" t="Include">
+            <e p="BottomBarMenu.cs" t="Include" />
+            <e p="HomeMenu.cs" t="Include" />
+            <e p="TopBarMenu.cs" t="Include" />
+            <e p="WindowMenu.cs" t="Include" />
+          </e>
+          <e p="Transitions" t="Include">
+            <e p="ScaleTransition.cs" t="Include" />
+            <e p="SlideTransition.cs" t="Include" />
+          </e>
+          <e p="Utils" t="Include">
+            <e p="GenericDictionary.cs" t="Include" />
+            <e p="Singleton.cs" t="Include" />
+            <e p="UiConstants.cs" t="Include" />
+            <e p="Utils.cs" t="Include" />
           </e>
         </e>
         <e p="TextMesh Pro" t="Include">

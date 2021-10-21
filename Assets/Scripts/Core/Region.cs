@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -8,6 +9,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 public class Region : MonoBehaviour
 {
     [SerializeField] private UiConstants.RegionType regionType;
+    [SerializeField] private Transition transition;
 
     private List<MenuElement> _menus = new List<MenuElement>();
 
@@ -19,6 +21,21 @@ public class Region : MonoBehaviour
 
     public Layer Layer => _layer;
     
+    public Transition Transition
+    {
+        get
+        {
+            if (transition == null)
+            {
+                bool found = UiConstants.Transitions.TryGetValue(UiConstants.DefaultTransition, out transition);
+                
+                if (!found) Debug.LogError($"Can't find {nameof(UiConstants.DefaultTransition)} Transition in {nameof(UiConstants.Transitions)}");
+            }
+
+            return transition;
+        }
+    }
+
     public void Initialize(Layer layer)
     {
         _layer = layer;
@@ -43,22 +60,35 @@ public class Region : MonoBehaviour
 
     public void UnloadMenu(MenuElement menu)
     {
-        switch (menu.UnloadMode)
+        if (menu.IsActive) menu.Deactivate();
+
+        else
         {
-            case UiConstants.UnloadMode.Remove:
-                menu.Remove();
-                break;
-            case UiConstants.UnloadMode.Cache:
-                menu.Cache();
-                break;
+            Debug.LogError($"Can't Unload, {menu.MenuType} menu already inactive");
+            return;
         }
+        
+        void OnTransitionComplete()
+        {
+            switch (menu.UnloadMode)
+            {
+                case UiConstants.UnloadMode.Remove:
+                    menu.Remove();
+                    break;
+                case UiConstants.UnloadMode.Cache:
+                    menu.Cache();
+                    break;
+            }
+        }
+        
+        Transition.Unload(menu, OnTransitionComplete);
     }
     
     public void Activate(MenuElement menu)
     {
         if (menu.IsActive)
         {
-            Debug.LogError($"{menu.MenuType} menu already active");
+            Debug.LogError($"Can't Activate, {menu.MenuType} menu already active");
             
             return;
         }
@@ -71,6 +101,8 @@ public class Region : MonoBehaviour
         }
         
         menu.Activate();
+
+        Transition.Load(menu);
     }
 
     public void Activate(UiConstants.MenuType menuType)

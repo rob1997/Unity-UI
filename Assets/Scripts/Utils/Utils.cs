@@ -21,4 +21,11 @@ public static class Utils
             onLoad.Invoke(handle.Result);
         };
     }
+
+    public static float GetNormalizedValue(float value, float min, float max)
+    {
+        value = Mathf.Clamp(value, min, max);
+
+        return (value - min) / (max - min);
+    }
 }

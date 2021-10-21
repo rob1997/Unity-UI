@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public static class UiConstants
 {
+    #region MENU
+
     public enum LayerType
     {
         Main,
@@ -28,12 +31,13 @@ public static class UiConstants
         BottomBar,
         Window,
         Settings,
-        
     }
 
     public enum UnloadMode
     {
+        //destroy
         Remove,
+        //disable
         Cache,
     }
 
@@ -45,4 +49,25 @@ public static class UiConstants
         MenuType.TopBar,
         MenuType.BottomBar,
     };
+
+    #endregion
+
+    #region Transition
+
+    public static readonly TransitionType DefaultTransition = TransitionType.HSlide;
+    public static readonly float DefaultFullTransitionTime = .5f;
+    
+    public enum TransitionType
+    {
+        HSlide,
+        Scale
+    }
+
+    public static readonly Dictionary<TransitionType, Transition> Transitions = new Dictionary<TransitionType, Transition>
+    {
+        {TransitionType.HSlide, ScriptableObject.CreateInstance<SlideTransition>()},
+        {TransitionType.Scale, ScriptableObject.CreateInstance<ScaleTransition>()},
+    };
+    
+    #endregion
 }
