@@ -4,44 +4,16 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
-public class Transition
+public abstract class Transition : ScriptableObject
 {
-    //TODO: transition should use duration relative to target
-    public float fullTransitionDuration = .5f;
-    
-    public void Initialize(MenuElement menu)
+    //TODO: make regions inactive (can't load/unload) during transitions
+    public abstract void Setup(MenuElement menu);
+    public abstract void Load(MenuElement menu, Action onComplete = null);
+    public abstract void Unload(MenuElement menu, Action onComplete = null);
+
+    protected float GetFullTransitionDuration()
     {
-//        menu.transform.localScale = Vector3.zero;
-
-        Vector2 initialAnchorPos = ((RectTransform) menu.transform).anchoredPosition;
-
-        initialAnchorPos.x -= ((RectTransform) menu.transform).rect.width;
-        
-        ((RectTransform) menu.transform).anchoredPosition = initialAnchorPos;
-    }
-    
-    public void Load(MenuElement menu, Action onComplete)
-    {
-        menu.transform.DOKill();
-
-        ((RectTransform) menu.transform).DOAnchorPosX(0, fullTransitionDuration).onComplete += onComplete.Invoke;
-//        menu.transform.DOScale(1, duration).onComplete += onComplete.Invoke;
-        
-    }
-    
-    public void Unload(MenuElement menu, Action onComplete)
-    {
-        menu.transform.DOKill();
-        ((RectTransform) menu.transform).DOAnchorPosX(- ((RectTransform) menu.Region.transform).rect.width, fullTransitionDuration).onComplete += delegate
-        {
-            Initialize(menu);
-            onComplete.Invoke();
-        };
-//        menu.transform.DOScale(0, duration).onComplete += delegate
-//        {
-//            Initialize(menu);
-//            onComplete.Invoke();
-//        };
-
+        //TODO: transition should use duration relative to target
+        return UiConstants.DefaultFullTransitionTime;
     }
 }

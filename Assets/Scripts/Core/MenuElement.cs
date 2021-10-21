@@ -20,8 +20,8 @@ public class MenuElement : UiElement
     
     public Layer Layer => _region.Layer;
     
-    public UiConstants.LayerType LayerType => layerType;
-    public UiConstants.RegionType RegionType => regionType;
+    public UiConstants.LayerType LayerType => _region != null ? _region.Layer.LayerType : layerType;
+    public UiConstants.RegionType RegionType => _region != null ? _region.RegionType : regionType;
     public UiConstants.MenuType MenuType => menuType;
     public UiConstants.UnloadMode UnloadMode => unloadMode;
     
@@ -30,8 +30,11 @@ public class MenuElement : UiElement
     public void Initialize(Region region)
     {
         _region = region;
+
+        regionType = RegionType;
+        layerType = LayerType;
         
-        _region.transition.Initialize(this);
+        _region.Transition.Setup(this);
     }
     
     public void Activate()
@@ -40,6 +43,8 @@ public class MenuElement : UiElement
         
         gameObject.SetActive(true);
 
+        gameObject.transform.SetAsLastSibling();
+        
         if (_destroyCacheCoroutine != null) _region.StopCoroutine(_destroyCacheCoroutine);
     }
     

@@ -31,7 +31,6 @@ public static class UiConstants
         BottomBar,
         Window,
         Settings,
-        
     }
 
     public enum UnloadMode
@@ -51,5 +50,24 @@ public static class UiConstants
         MenuType.BottomBar,
     };
 
+    #endregion
+
+    #region Transition
+
+    public static readonly TransitionType DefaultTransition = TransitionType.HSlide;
+    public static readonly float DefaultFullTransitionTime = .5f;
+    
+    public enum TransitionType
+    {
+        HSlide,
+        Scale
+    }
+
+    public static readonly Dictionary<TransitionType, Transition> Transitions = new Dictionary<TransitionType, Transition>
+    {
+        {TransitionType.HSlide, ScriptableObject.CreateInstance<SlideTransition>()},
+        {TransitionType.Scale, ScriptableObject.CreateInstance<ScaleTransition>()},
+    };
+    
     #endregion
 }

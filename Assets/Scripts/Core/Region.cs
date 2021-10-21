@@ -8,9 +8,8 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class Region : MonoBehaviour
 {
-    public Transition transition = new Transition();
-    
     [SerializeField] private UiConstants.RegionType regionType;
+    [SerializeField] private Transition transition;
 
     private List<MenuElement> _menus = new List<MenuElement>();
 
@@ -21,6 +20,21 @@ public class Region : MonoBehaviour
     public List<MenuElement> Menus => _menus;
 
     public Layer Layer => _layer;
+    
+    public Transition Transition
+    {
+        get
+        {
+            if (transition == null)
+            {
+                bool found = UiConstants.Transitions.TryGetValue(UiConstants.DefaultTransition, out transition);
+                
+                if (!found) Debug.LogError($"Can't find {nameof(UiConstants.DefaultTransition)} Transition in {nameof(UiConstants.Transitions)}");
+            }
+
+            return transition;
+        }
+    }
 
     public void Initialize(Layer layer)
     {
@@ -47,8 +61,14 @@ public class Region : MonoBehaviour
     public void UnloadMenu(MenuElement menu)
     {
         if (menu.IsActive) menu.Deactivate();
+
+        else
+        {
+            Debug.LogError($"Can't Unload, {menu.MenuType} menu already inactive");
+            return;
+        }
         
-        transition.Unload(menu, delegate
+        void OnTransitionComplete()
         {
             switch (menu.UnloadMode)
             {
@@ -59,14 +79,16 @@ public class Region : MonoBehaviour
                     menu.Cache();
                     break;
             }
-        });
+        }
+        
+        Transition.Unload(menu, OnTransitionComplete);
     }
     
     public void Activate(MenuElement menu)
     {
         if (menu.IsActive)
         {
-            Debug.LogError($"{menu.MenuType} menu already active");
+            Debug.LogError($"Can't Activate, {menu.MenuType} menu already active");
             
             return;
         }
@@ -75,16 +97,12 @@ public class Region : MonoBehaviour
 
         if (activeMenu != null)
         {
-            activeMenu.Deactivate();
-
             UnloadMenu(activeMenu);
-            
-//            UnloadMenu(activeMenu);
         }
         
         menu.Activate();
 
-        transition.Load(menu, delegate {  });
+        Transition.Load(menu);
     }
 
     public void Activate(UiConstants.MenuType menuType)

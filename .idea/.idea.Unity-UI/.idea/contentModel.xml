@@ -72,6 +72,10 @@
             <e p="TopBarMenu.cs" t="Include" />
             <e p="WindowMenu.cs" t="Include" />
           </e>
+          <e p="Transitions" t="Include">
+            <e p="ScaleTransition.cs" t="Include" />
+            <e p="SlideTransition.cs" t="Include" />
+          </e>
           <e p="Utils" t="Include">
             <e p="GenericDictionary.cs" t="Include" />
             <e p="Singleton.cs" t="Include" />
