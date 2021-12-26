@@ -5,6 +5,32 @@ using UnityEngine.Serialization;
 
 public class Menu : UiElement
 {
+    #region Activated
+
+    public delegate void Activated();
+
+    public event Activated OnActivated;
+
+    private void InvokeActivated()
+    {
+        OnActivated?.Invoke();
+    }
+
+    #endregion
+
+    #region Deactivated
+
+    public delegate void Deactivated();
+
+    public event Deactivated OnDeactivated;
+
+    public void InvokeDeactivated()
+    {
+        OnDeactivated?.Invoke();
+    }
+
+    #endregion
+    
     [FormerlySerializedAs("layerType")] [SerializeField] private UiConstants.UiLayer uiLayer;
     [FormerlySerializedAs("regionType")] [SerializeField] private UiConstants.UiRegion uiRegion;
     [FormerlySerializedAs("menuType")] [SerializeField] private UiConstants.UiMenu uiMenu;
@@ -51,6 +77,8 @@ public class Menu : UiElement
         if (_destroyCacheCoroutine != null) _region.StopCoroutine(_destroyCacheCoroutine);
         
         if (Transition != null) Transition.Load(this);
+        
+        InvokeActivated();
     }
     
     public void Deactivate()
@@ -60,6 +88,8 @@ public class Menu : UiElement
         if (Transition != null) Transition.Unload(this, Unload);
 
         else Unload();
+        
+        InvokeDeactivated();
     }
 
     private void Unload()
