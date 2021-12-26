@@ -255,6 +255,8 @@ MonoBehaviour:
     m_AssetGUID: a24417f7b259b22499447893aac968ea
     m_SubObjectName: 
     m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  uiPreferences: {fileID: 11400000, guid: 7c89a19ff5602b84ab28cbeb79555131, type: 2}
   menuReferences:
     list:
     - Key: 0
@@ -262,24 +264,29 @@ MonoBehaviour:
         m_AssetGUID: d73af8c768f6e224e9eaf052f8dbf5a2
         m_SubObjectName: 
         m_SubObjectType: 
+        m_EditorAssetChanged: 0
     - Key: 1
       Value:
         m_AssetGUID: f0781a5a5ed2bc54a8b17a1a67a08b4a
         m_SubObjectName: 
         m_SubObjectType: 
+        m_EditorAssetChanged: 0
     - Key: 2
       Value:
         m_AssetGUID: b1527e49087a38c4689769d8f211b17b
         m_SubObjectName: 
         m_SubObjectType: 
+        m_EditorAssetChanged: 0
     - Key: 3
       Value:
         m_AssetGUID: c56c9b4862da45146833606044e778b5
         m_SubObjectName: 
         m_SubObjectType: 
+        m_EditorAssetChanged: 0
     - Key: 4
       Value:
         m_AssetGUID: ee916f45be51eb948b45dc472f38143c
         m_SubObjectName: 
         m_SubObjectType: 
+        m_EditorAssetChanged: 0
     keyCollision: 0

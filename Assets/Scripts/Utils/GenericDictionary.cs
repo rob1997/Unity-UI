@@ -165,6 +165,18 @@ public class GenericDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ISeria
         }
     }
 
+    public static GenericDictionary<TKey, TValue> ToGenericDictionary(Dictionary<TKey, TValue> dictionary)
+    {
+        GenericDictionary<TKey, TValue> genericDictionary = new GenericDictionary<TKey, TValue>();
+        
+        foreach (TKey key in dictionary.Keys)
+        {
+            genericDictionary.Add(key, dictionary[key]);
+        }
+        
+        return genericDictionary;
+    }
+    
     public bool Remove(KeyValuePair<TKey, TValue> pair)
     {
         TValue value;

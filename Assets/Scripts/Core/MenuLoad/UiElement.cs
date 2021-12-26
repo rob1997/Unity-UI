@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UiElement : MonoBehaviour
+public abstract class UiElement : MonoBehaviour
 {
     
 }

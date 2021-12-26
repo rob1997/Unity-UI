@@ -7,14 +7,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = nameof(ScaleTransition), menuName = "Ui-Framework/Transitions/Scale", order = 0)]
 public class ScaleTransition : Transition
 {
-    public override void Setup(MenuElement menu)
+    public override void Setup(Menu menu)
     {
         Transform transform = menu.transform;
         
         transform.localScale = Vector3.zero;
     }
     
-    public override void Load(MenuElement menu, Action onComplete = null)
+    public override void Load(Menu menu, Action onComplete = null)
     {
         Transform transform = menu.transform;
         
@@ -28,7 +28,7 @@ public class ScaleTransition : Transition
         };
     }
     
-    public override void Unload(MenuElement menu, Action onComplete = null)
+    public override void Unload(Menu menu, Action onComplete = null)
     {
         Transform transform = menu.transform;
         

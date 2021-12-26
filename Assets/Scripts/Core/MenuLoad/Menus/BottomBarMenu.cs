@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BottomBarMenu : MenuElement
+public class BottomBarMenu : Menu
 {
     [Space] [Header("Buttons")]
     [SerializeField] private Button homeButton;
     
     void Start()
     {
-        homeButton.onClick.AddListener(delegate { UiManager.Instance.UiRoot.LoadMenu(UiConstants.MenuType.Home); });
+        homeButton.onClick.AddListener(delegate { UiManager.Instance.UiRoot.LoadMenu(UiConstants.UiMenu.Home); });
     }
 }

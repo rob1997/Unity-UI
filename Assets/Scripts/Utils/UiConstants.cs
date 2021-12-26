@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using DG.Tweening;
 using UnityEngine;
 
@@ -7,13 +8,13 @@ public static class UiConstants
 {
     #region MENU
 
-    public enum LayerType
+    public enum UiLayer
     {
         Main,
         Window
     }
     
-    public enum RegionType
+    public enum UiRegion
     {
         Main,
         TopBar,
@@ -24,13 +25,13 @@ public static class UiConstants
     /// <summary>
     /// IMPORTANT - ALWAYS add new MenuType to the bottom of enum or <see cref="UiManager.menuReferences"/> serialization will be reset
     /// </summary>
-    public enum MenuType
+    public enum UiMenu
     {
         Home,
         TopBar,
         BottomBar,
         Window,
-        Settings,
+        Settings
     }
 
     public enum UnloadMode
@@ -41,33 +42,5 @@ public static class UiConstants
         Cache,
     }
 
-    public static readonly float CacheTimeOutSeconds = 5f;
-    
-    public static List<MenuType> StartingMenus = new List<MenuType>
-    {
-        MenuType.Home,
-        MenuType.TopBar,
-        MenuType.BottomBar,
-    };
-
-    #endregion
-
-    #region Transition
-
-    public static readonly TransitionType DefaultTransition = TransitionType.HSlide;
-    public static readonly float DefaultFullTransitionTime = .5f;
-    
-    public enum TransitionType
-    {
-        HSlide,
-        Scale
-    }
-
-    public static readonly Dictionary<TransitionType, Transition> Transitions = new Dictionary<TransitionType, Transition>
-    {
-        {TransitionType.HSlide, ScriptableObject.CreateInstance<SlideTransition>()},
-        {TransitionType.Scale, ScriptableObject.CreateInstance<ScaleTransition>()},
-    };
-    
     #endregion
 }

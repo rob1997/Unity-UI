@@ -1,5 +1,6 @@
 using System;
 using UnityEditor;
+using UnityEditorInternal;
 using UnityEngine;
 
 /// <summary>
@@ -16,9 +17,10 @@ public class GenericDictionaryPropertyDrawer : PropertyDrawer
     public override void OnGUI(Rect pos, SerializedProperty property, GUIContent label)
     {
         // Draw list.
-        var list = property.FindPropertyRelative("list");
+        SerializedProperty list = property.FindPropertyRelative("list");
         string fieldName = ObjectNames.NicifyVariableName(fieldInfo.Name);
         var currentPos = new Rect(lineHeight, pos.y, pos.width, lineHeight);
+        
         EditorGUI.PropertyField(currentPos, list, new GUIContent(fieldName), true);
 
         // Draw key collision warning.
@@ -27,7 +29,7 @@ public class GenericDictionaryPropertyDrawer : PropertyDrawer
         {
             currentPos.y += EditorGUI.GetPropertyHeight(list, true) + vertSpace;
             var entryPos = new Rect(lineHeight, currentPos.y, pos.width, lineHeight * 2f);
-            EditorGUI.HelpBox(entryPos, "Duplicate keys will not be serialized.", MessageType.Warning);
+            EditorGUI.HelpBox(entryPos, "Duplicate keys will not be serialized.", MessageType.Error);
         }
     }
 

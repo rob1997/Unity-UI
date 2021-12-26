@@ -7,7 +7,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = nameof(SlideTransition), menuName = "Ui-Framework/Transitions/Slide", order = 0)]
 public class SlideTransition : Transition
 {
-    public override void Setup(MenuElement menu)
+    public override void Setup(Menu menu)
     {
         RectTransform rectT = (RectTransform) menu.transform;
         
@@ -18,7 +18,7 @@ public class SlideTransition : Transition
         rectT.anchoredPosition = initialAnchorPos;
     }
     
-    public override void Load(MenuElement menu, Action onComplete = null)
+    public override void Load(Menu menu, Action onComplete = null)
     {
         RectTransform rectT = (RectTransform) menu.transform;
         
@@ -33,7 +33,7 @@ public class SlideTransition : Transition
 
     }
     
-    public override void Unload(MenuElement menu, Action onComplete = null)
+    public override void Unload(Menu menu, Action onComplete = null)
     {
         RectTransform rectT = (RectTransform) menu.transform;
         

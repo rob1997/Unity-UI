@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 447731638}
   - component: {fileID: 447731637}
   - component: {fileID: 5604167786832588252}
+  - component: {fileID: 5269272561860495359}
   m_Layer: 5
   m_Name: Settings
   m_TagString: Untagged
@@ -120,6 +121,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5269272561860495359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447731635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82cbaab029def584cb22ef23c6dee818, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorType: 0
+  isOverlay: 1
+  colorPalette: {fileID: 11400000, guid: 717c388a7ce2e6e489208b70248fbc84, type: 2}
 --- !u!1 &4418360004705221681
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,6 +148,7 @@ GameObject:
   - component: {fileID: 6081019719644299134}
   - component: {fileID: 4452739799667904701}
   - component: {fileID: 9097846922957031042}
+  - component: {fileID: 660203983217639728}
   m_Layer: 5
   m_Name: Profile
   m_TagString: Untagged
@@ -240,6 +257,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &660203983217639728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4418360004705221681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82cbaab029def584cb22ef23c6dee818, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorType: 0
+  isOverlay: 1
+  colorPalette: {fileID: 11400000, guid: 717c388a7ce2e6e489208b70248fbc84, type: 2}
 --- !u!1 &5019202789920094658
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,6 +285,7 @@ GameObject:
   - component: {fileID: 5019202789920094662}
   - component: {fileID: 5019202789920094663}
   - component: {fileID: 8221721169362029345}
+  - component: {fileID: 2574874317483739388}
   m_Layer: 5
   m_Name: TopBarMenu
   m_TagString: Untagged
@@ -352,3 +385,18 @@ MonoBehaviour:
   unloadMode: 1
   settingsButton: {fileID: 5604167786832588252}
   profileButton: {fileID: 9097846922957031042}
+--- !u!114 &2574874317483739388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5019202789920094658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82cbaab029def584cb22ef23c6dee818, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorType: 0
+  isOverlay: 0
+  colorPalette: {fileID: 11400000, guid: 717c388a7ce2e6e489208b70248fbc84, type: 2}
