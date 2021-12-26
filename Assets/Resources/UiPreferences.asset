@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa0fecfabf88bda499a256f035fba03b, type: 3}
+  m_Name: UiPreferences
+  m_EditorClassIdentifier: 
+  cacheTimeOutSeconds: 5
+  defaultTransition: {fileID: 11400000, guid: f607a6e8b6981c049a18c31fbe97fae3, type: 2}
+  defaultFullTransitionTime: 0.5
+  defaultColorPalette: {fileID: 11400000, guid: 717c388a7ce2e6e489208b70248fbc84,
+    type: 2}
+  startingMenus: 000000000100000002000000

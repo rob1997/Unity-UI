@@ -1,14 +1,18 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
 public class UiManager : Singleton<UiManager>
 {
     public AssetReference uIRootObjectReference;
+    
+    public UiPreferences uiPreferences;
 
-    [SerializeField] private GenericDictionary<UiConstants.MenuType, AssetReference> menuReferences;
+    [HideInInspector] public GenericDictionary<UiConstants.UiMenu, AssetReference> menuReferences;
 
     private UiRoot _uiRoot;
     
@@ -37,8 +41,8 @@ public class UiManager : Singleton<UiManager>
         });
     }
     
-    public bool GetMenuReference(UiConstants.MenuType menuType, out AssetReference menuReference)
+    public bool GetMenuReference(UiConstants.UiMenu uiMenu, out AssetReference menuReference)
     {
-        return menuReferences.TryGetValue(menuType, out menuReference);
+        return menuReferences.TryGetValue(uiMenu, out menuReference);
     }
 }

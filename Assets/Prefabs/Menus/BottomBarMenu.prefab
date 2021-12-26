@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7235982588742451703}
   - component: {fileID: 5088389470153547918}
   - component: {fileID: 2646625939990320538}
+  - component: {fileID: 6920370826731614746}
   m_Layer: 5
   m_Name: Home
   m_TagString: Untagged
@@ -120,6 +121,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6920370826731614746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2958659208451766489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82cbaab029def584cb22ef23c6dee818, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorType: 0
+  isOverlay: 1
+  colorPalette: {fileID: 11400000, guid: 717c388a7ce2e6e489208b70248fbc84, type: 2}
 --- !u!1 &5019202789920094658
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,6 +149,7 @@ GameObject:
   - component: {fileID: 5019202789920094662}
   - component: {fileID: 5019202789920094663}
   - component: {fileID: 920866376584305448}
+  - component: {fileID: 367317818118261570}
   m_Layer: 5
   m_Name: BottomBarMenu
   m_TagString: Untagged
@@ -230,3 +247,18 @@ MonoBehaviour:
   menuType: 2
   unloadMode: 1
   homeButton: {fileID: 2646625939990320538}
+--- !u!114 &367317818118261570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5019202789920094658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82cbaab029def584cb22ef23c6dee818, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorType: 0
+  isOverlay: 0
+  colorPalette: {fileID: 11400000, guid: 717c388a7ce2e6e489208b70248fbc84, type: 2}

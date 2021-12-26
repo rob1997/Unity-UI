@@ -2,10 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Layer : MonoBehaviour
 {
-    [SerializeField] private UiConstants.LayerType layerType;
+    [FormerlySerializedAs("layerType")] [SerializeField] private UiConstants.UiLayer uiLayer;
     
     private List<Region> _regions = new List<Region>();
 
@@ -13,7 +14,7 @@ public class Layer : MonoBehaviour
     
     public List<Region> Regions => _regions;
     
-    public UiConstants.LayerType LayerType => layerType;
+    public UiConstants.UiLayer UiLayer => uiLayer;
     
     public void Initialize(UiRoot uiRoot)
     {
@@ -27,15 +28,15 @@ public class Layer : MonoBehaviour
         }
     }
 
-    public bool GetRegion(UiConstants.RegionType regionType, out Region region)
+    public bool GetRegion(UiConstants.UiRegion uiRegion, out Region region)
     {
-        region = _regions.Find(r => r.RegionType == regionType);
+        region = _regions.Find(r => r.UiRegion == uiRegion);
 
         return region != null;
     }
     
-    public bool HasRegion(UiConstants.RegionType regionType)
+    public bool HasRegion(UiConstants.UiRegion uiRegion)
     {
-        return _regions.Find(r => r.RegionType == regionType) != null;
+        return _regions.Find(r => r.UiRegion == uiRegion) != null;
     }
 }

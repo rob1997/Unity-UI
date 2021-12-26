@@ -10,7 +10,10 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Editor" t="Include">
+          <e p="ColorizeEditor.cs" t="Include" />
+          <e p="ColorPaletteEditor.cs" t="Include" />
           <e p="GenericDictionaryPropertyDrawer.cs" t="Include" />
+          <e p="UiManagerEditor.cs" t="Include" />
         </e>
         <e p="Plugins" t="Include">
           <e p="Demigiant" t="Include">
@@ -58,23 +61,30 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="Core" t="Include">
-            <e p="Layer.cs" t="Include" />
-            <e p="MenuElement.cs" t="Include" />
-            <e p="Region.cs" t="Include" />
-            <e p="Transition.cs" t="Include" />
-            <e p="UiElement.cs" t="Include" />
+            <e p="Apperance" t="Include">
+              <e p="Colorize.cs" t="Include" />
+              <e p="ColorPalette.cs" t="Include" />
+              <e p="Transition.cs" t="Include" />
+              <e p="Transitions" t="Include">
+                <e p="ScaleTransition.cs" t="Include" />
+                <e p="SlideTransition.cs" t="Include" />
+              </e>
+            </e>
+            <e p="MenuLoad" t="Include">
+              <e p="Layer.cs" t="Include" />
+              <e p="Menu.cs" t="Include" />
+              <e p="Menus" t="Include">
+                <e p="BottomBarMenu.cs" t="Include" />
+                <e p="HomeMenu.cs" t="Include" />
+                <e p="TopBarMenu.cs" t="Include" />
+                <e p="WindowMenu.cs" t="Include" />
+              </e>
+              <e p="Region.cs" t="Include" />
+              <e p="UiElement.cs" t="Include" />
+              <e p="UiRoot.cs" t="Include" />
+            </e>
             <e p="UiManager.cs" t="Include" />
-            <e p="UiRoot.cs" t="Include" />
-          </e>
-          <e p="Menus" t="Include">
-            <e p="BottomBarMenu.cs" t="Include" />
-            <e p="HomeMenu.cs" t="Include" />
-            <e p="TopBarMenu.cs" t="Include" />
-            <e p="WindowMenu.cs" t="Include" />
-          </e>
-          <e p="Transitions" t="Include">
-            <e p="ScaleTransition.cs" t="Include" />
-            <e p="SlideTransition.cs" t="Include" />
+            <e p="UiPreferences.cs" t="Include" />
           </e>
           <e p="Utils" t="Include">
             <e p="GenericDictionary.cs" t="Include" />
