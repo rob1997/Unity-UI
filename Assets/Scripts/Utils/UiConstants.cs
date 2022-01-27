@@ -11,7 +11,7 @@ public static class UiConstants
     public enum UiLayer
     {
         Main,
-        Window
+        Modal
     }
     
     public enum UiRegion
@@ -30,7 +30,7 @@ public static class UiConstants
         Home,
         TopBar,
         BottomBar,
-        Window,
+        Modal,
         Settings
     }
 
@@ -44,3 +44,9 @@ public static class UiConstants
 
     #endregion
 }
+
+#region TODO
+
+//TODO: button profiler in Modal Menu for attaching buttons
+
+#endregion

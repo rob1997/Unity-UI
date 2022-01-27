@@ -32,6 +32,18 @@ MonoBehaviour:
         overlay: {r: 0, g: 0, b: 0, a: 0}
     - Key: 4
       Value:
+        main: {r: 0, g: 0.70980394, b: 0.5372549, a: 1}
+        overlay: {r: 0, g: 0, b: 0, a: 0}
+    - Key: 5
+      Value:
         main: {r: 0, g: 0, b: 0, a: 0}
         overlay: {r: 0, g: 0, b: 0, a: 0}
+    - Key: 6
+      Value:
+        main: {r: 0, g: 0, b: 0, a: 0}
+        overlay: {r: 0, g: 0, b: 0, a: 0}
+    - Key: 7
+      Value:
+        main: {r: 0, g: 0.70980394, b: 0.5372549, a: 1}
+        overlay: {r: 1, g: 1, b: 1, a: 1}
     keyCollision: 0

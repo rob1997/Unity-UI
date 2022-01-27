@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 5708816958901373408}
   - component: {fileID: 8263448472538329143}
   m_Layer: 5
-  m_Name: WindowLayer
+  m_Name: ModalLayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abae12c4d38b8c04da248e9edbfb4dcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerType: 1
+  uiLayer: 1
 --- !u!1 &2962735889381476652
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,7 +164,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4f6e0fb9996a844f8076fad1afa1f93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  regionType: 1
+  uiRegion: 1
+  transition: {fileID: 0}
 --- !u!1 &3785502813389869200
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,7 +214,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4f6e0fb9996a844f8076fad1afa1f93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  regionType: 0
+  uiRegion: 0
+  transition: {fileID: 0}
 --- !u!1 &5582395908075579694
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,7 +264,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4f6e0fb9996a844f8076fad1afa1f93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  regionType: 2
+  uiRegion: 2
+  transition: {fileID: 0}
 --- !u!1 &5596936631962983223
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,7 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abae12c4d38b8c04da248e9edbfb4dcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerType: 0
+  uiLayer: 0
 --- !u!1 &6521339173954468890
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,7 +366,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4f6e0fb9996a844f8076fad1afa1f93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  regionType: 0
+  uiRegion: 0
+  transition: {fileID: 0}
 --- !u!1 &7644552066898083869
 GameObject:
   m_ObjectHideFlags: 0
