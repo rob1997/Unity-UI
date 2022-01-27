@@ -21,6 +21,9 @@ public class ColorPalette : ScriptableObject
         Background,
         Surface,
         Error,
+        Warning,
+        Info,
+        Success,
     }
     
     public GenericDictionary<ColorType, UiColor> palette = GenericDictionary<ColorType, UiColor>

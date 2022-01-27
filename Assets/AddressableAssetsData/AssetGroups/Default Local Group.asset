@@ -30,7 +30,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: c56c9b4862da45146833606044e778b5
-    m_Address: Assets/Prefabs/Window.prefab
+    m_Address: Assets/Prefabs/Menus/ModalMenu.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: f0781a5a5ed2bc54a8b17a1a67a08b4a
@@ -39,6 +39,10 @@ MonoBehaviour:
     m_SerializedLabels: []
   - m_GUID: b1527e49087a38c4689769d8f211b17b
     m_Address: Assets/Prefabs/Menus/BottomBarMenu.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9b4d07b37bfbf254cb10ed680ae1fd23
+    m_Address: Assets/Prefabs/Button.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

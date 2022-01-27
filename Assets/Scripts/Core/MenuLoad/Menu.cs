@@ -24,9 +24,37 @@ public class Menu : UiElement
 
     public event Deactivated OnDeactivated;
 
-    public void InvokeDeactivated()
+    private void InvokeDeactivated()
     {
         OnDeactivated?.Invoke();
+    }
+
+    #endregion
+
+    //Invoked when menu is already activated and completed load transition
+    #region Loaded
+
+    public delegate void Loaded();
+
+    public event Loaded OnLoaded;
+
+    private void InvokeLoaded()
+    {
+        OnLoaded?.Invoke();
+    }
+
+    #endregion
+
+    //Invoked when menu is already deactivated and completed unload transition
+    #region Unloaded
+
+    public delegate void Unloaded();
+
+    public event Unloaded OnUnloaded;
+
+    private void InvokeUnloaded()
+    {
+        OnUnloaded?.Invoke();
     }
 
     #endregion
@@ -53,10 +81,10 @@ public class Menu : UiElement
     public UiConstants.UnloadMode UnloadMode => unloadMode;
     
     public bool IsActive { get; private set; }
-
+    
     public Transition Transition => _region.Transition;
     
-    public void Initialize(Region region)
+    public virtual void Initialize(Region region)
     {
         _region = region;
 
@@ -76,7 +104,7 @@ public class Menu : UiElement
         
         if (_destroyCacheCoroutine != null) _region.StopCoroutine(_destroyCacheCoroutine);
         
-        if (Transition != null) Transition.Load(this);
+        if (Transition != null) Transition.Load(this, InvokeLoaded);
         
         InvokeActivated();
     }
@@ -103,6 +131,8 @@ public class Menu : UiElement
                 Cache();
                 break;
         }
+        
+        InvokeUnloaded();
     }
     
     public void Remove()

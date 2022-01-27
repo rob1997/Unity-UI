@@ -12,6 +12,8 @@ public class UiRoot : MonoBehaviour
 
     public List<Layer> Layers => _layers;
     
+    public ModalFactory ModalFactory { get; } = new ModalFactory();
+    
     public void Initialize()
     {
         if (layerRoot == null) layerRoot = transform;
