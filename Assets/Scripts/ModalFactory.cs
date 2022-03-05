@@ -14,13 +14,17 @@ public enum UiModal
 public struct ModalAction
 {
     public string Title { get; }
-
+    
     public Action Action { get; }
+    
+    public ButtonProfile.ButtonProfileType ButtonProfileType { get; }
 
-    public ModalAction(string title, Action action)
+    public ModalAction(string title, Action action, 
+        ButtonProfile.ButtonProfileType buttonProfileType = ButtonProfile.ButtonProfileType.Positive)
     {
         Title = title;
         Action = action;
+        ButtonProfileType = buttonProfileType;
     }
 }
 

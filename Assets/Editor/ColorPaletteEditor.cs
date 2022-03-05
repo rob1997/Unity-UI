@@ -37,7 +37,7 @@ public class ColorPaletteEditor : Editor
                 continue;
             }
 
-            ColorPalette.ColorType colorType = (ColorPalette.ColorType) keyProperty.enumValueIndex;
+            ColorPalette.ColorType colorType = palette.palette.Keys.ToArray()[keyProperty.enumValueIndex];
 
             allColors.Remove(colorType);
             

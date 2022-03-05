@@ -24,24 +24,24 @@ MonoBehaviour:
         overlay: {r: 0, g: 0, b: 0, a: 0}
     - Key: 2
       Value:
-        main: {r: 0, g: 0, b: 0, a: 0}
-        overlay: {r: 0, g: 0, b: 0, a: 0}
+        main: {r: 0.16470589, g: 0.20784314, b: 0.24705882, a: 1}
+        overlay: {r: 1, g: 1, b: 1, a: 1}
     - Key: 3
       Value:
-        main: {r: 0, g: 0, b: 0, a: 0}
-        overlay: {r: 0, g: 0, b: 0, a: 0}
+        main: {r: 0, g: 0, b: 0, a: 1}
+        overlay: {r: 1, g: 1, b: 1, a: 1}
     - Key: 4
       Value:
-        main: {r: 0, g: 0.70980394, b: 0.5372549, a: 1}
-        overlay: {r: 0, g: 0, b: 0, a: 0}
+        main: {r: 0.8627451, g: 0.16078432, b: 0.20392157, a: 1}
+        overlay: {r: 1, g: 1, b: 1, a: 1}
     - Key: 5
       Value:
-        main: {r: 0, g: 0, b: 0, a: 0}
-        overlay: {r: 0, g: 0, b: 0, a: 0}
+        main: {r: 0.9254902, g: 0.73333335, b: 0.105882354, a: 1}
+        overlay: {r: 1, g: 1, b: 1, a: 1}
     - Key: 6
       Value:
-        main: {r: 0, g: 0, b: 0, a: 0}
-        overlay: {r: 0, g: 0, b: 0, a: 0}
+        main: {r: 0.12941177, g: 0.45490196, b: 0.93333334, a: 1}
+        overlay: {r: 1, g: 1, b: 1, a: 1}
     - Key: 7
       Value:
         main: {r: 0, g: 0.70980394, b: 0.5372549, a: 1}

@@ -17,4 +17,8 @@ MonoBehaviour:
   defaultFullTransitionTime: 0.5
   defaultColorPalette: {fileID: 11400000, guid: 717c388a7ce2e6e489208b70248fbc84,
     type: 2}
+  defaultButtonProfile: {fileID: 11400000, guid: cd540a7ae88b7854bbb7f1b5a3684b5b,
+    type: 2}
+  defaultFontProfile: {fileID: 11400000, guid: ae307ba8fa39c334aa723d54c482c4c2, type: 2}
+  defaultFontGroup: {fileID: 11400000, guid: 892c288c7e0bd8944bf90446f6f9a256, type: 2}
   startingMenus: 000000000100000002000000

@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 5019202789920094661}
   - component: {fileID: 5019202789920094665}
   - component: {fileID: 5019202789920094662}
-  - component: {fileID: 5019202789920094663}
+  - component: {fileID: 5717385149014558156}
   - component: {fileID: 920866376584305448}
   - component: {fileID: 367317818118261570}
   m_Layer: 5
@@ -217,7 +217,7 @@ MonoBehaviour:
   m_PixelsPerUnitMultiplier: 1
   borderWidth: 0
   falloffDistance: 1
---- !u!114 &5019202789920094663
+--- !u!114 &5717385149014558156
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -226,10 +226,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5019202789920094658}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68356c3764ad390429ddad9e48ce8c31, type: 3}
+  m_Script: {fileID: 11500000, guid: 8714c362c0c8a6449a9559a31cdab9a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: {x: 0, y: 0, z: 0, w: 0}
+  radius: 0
 --- !u!114 &920866376584305448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,9 +242,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dad1f25fe8a05a244a606790289b7b52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerType: 0
-  regionType: 2
-  menuType: 2
+  uiLayer: 0
+  uiRegion: 2
+  uiMenu: 2
   unloadMode: 1
   homeButton: {fileID: 2646625939990320538}
 --- !u!114 &367317818118261570

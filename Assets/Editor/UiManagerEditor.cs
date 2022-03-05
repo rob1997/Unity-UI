@@ -24,24 +24,24 @@ public class UiManagerEditor : Editor
 
         EditorGUILayout.Space(10);
         
-        SerializedProperty paletteProperty = serializedObject.FindProperty(nameof(uiManager.menuReferences)).FindPropertyRelative("list");
+        SerializedProperty menuReferenceListProperty = serializedObject.FindProperty(nameof(uiManager.menuReferences)).FindPropertyRelative("list");
         
         List<UiConstants.UiMenu> menuTypes = Utils.GetEnumValues<UiConstants.UiMenu>().ToList();
         
-        for (int i = 0; i < paletteProperty.arraySize; i++)
+        for (int i = 0; i < menuReferenceListProperty.arraySize; i++)
         {
-            SerializedProperty keyValuePairProperty = paletteProperty.GetArrayElementAtIndex(i);
+            SerializedProperty keyValuePairProperty = menuReferenceListProperty.GetArrayElementAtIndex(i);
                 
             SerializedProperty keyProperty = keyValuePairProperty.FindPropertyRelative("Key");
 
             //If enum doesn't exist anymore
             if (keyProperty.enumValueIndex == -1)
             {
-                paletteProperty.DeleteArrayElementAtIndex(i);
+                menuReferenceListProperty.DeleteArrayElementAtIndex(i);
                 continue;
             }
 
-            UiConstants.UiMenu uiMenu = (UiConstants.UiMenu) keyProperty.enumValueIndex;
+            UiConstants.UiMenu uiMenu = uiManager.menuReferences.Keys.ToArray()[keyProperty.enumValueIndex];
 
             menuTypes.Remove(uiMenu);
 
@@ -65,9 +65,9 @@ public class UiManagerEditor : Editor
 
         for (int i = 0; i < menuTypes.Count; i++)
         {
-            paletteProperty.arraySize++;
+            menuReferenceListProperty.arraySize++;
 
-            paletteProperty.GetArrayElementAtIndex(paletteProperty.arraySize - 1).FindPropertyRelative("Key")
+            menuReferenceListProperty.GetArrayElementAtIndex(menuReferenceListProperty.arraySize - 1).FindPropertyRelative("Key")
                 .enumValueIndex = (int) menuTypes[i];
         }
         
