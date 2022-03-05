@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 443fc103d79b2e34d9b5f19c6a206ee7, type: 3}
+  m_Name: FontGroup
+  m_EditorClassIdentifier: 
+  group:
+    list:
+    - Key: 100
+      Value: {fileID: 11400000, guid: daae802a8af5d2649bd79a7225fe744d, type: 2}
+    - Key: 200
+      Value: {fileID: 11400000, guid: 1b78237f7462fa34cb12c05843f2d7bd, type: 2}
+    - Key: 300
+      Value: {fileID: 11400000, guid: 34d6adb57eb607a4786d1f322575e1bd, type: 2}
+    - Key: 400
+      Value: {fileID: 11400000, guid: d9da877b73e955048a92eff813000caf, type: 2}
+    - Key: 500
+      Value: {fileID: 11400000, guid: a1ce719072528074f81210235b65d88e, type: 2}
+    - Key: 600
+      Value: {fileID: 11400000, guid: 0366f74b5e6dbfd41bbeb03c94f1f2b8, type: 2}
+    - Key: 700
+      Value: {fileID: 11400000, guid: ef7b2fcf46f984747afe54dfac2f63ab, type: 2}
+    - Key: 800
+      Value: {fileID: 11400000, guid: c0906d8ff56ce4b4a83e692b5f4cca09, type: 2}
+    - Key: 900
+      Value: {fileID: 11400000, guid: 23bc30ea546345a46918dd06729cea25, type: 2}
+    keyCollision: 0

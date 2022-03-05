@@ -53,14 +53,33 @@ public class ModalMenu : Menu
                 {
                     GameObject buttonObj = Instantiate(result, buttonContainer);
                     
-                    buttonObj.GetComponent<Button>().onClick.AddListener(delegate
+                    if (buttonObj.TryGetComponent(out ButtonProfiler buttonProfiler))
                     {
-                        action.Action.Invoke();
+                        buttonProfiler.Initialize(action.Title, delegate
+                        {
+                            action.Action.Invoke();
                         
-                        CloseModal();
-                    });
+                            CloseModal();
+                        }, action.ButtonProfileType);
+                    }
 
-                    buttonObj.GetComponentInChildren<TextMeshProUGUI>().text = action.Title;
+                    else
+                    {
+                        Debug.LogWarning("ButtonProfiler Component not found on Button");
+                        
+                        buttonObj.GetComponent<Button>().onClick.AddListener(delegate
+                        {
+                            action.Action.Invoke();
+                        
+                            CloseModal();
+                        });
+
+                        TextMeshProUGUI buttonText = buttonObj.GetComponentInChildren<TextMeshProUGUI>();
+                        
+                        if (buttonText != null) buttonText.text = action.Title;
+
+                        else Debug.LogWarning("No Text Component Found on Button");
+                    }
                 }
             });
 

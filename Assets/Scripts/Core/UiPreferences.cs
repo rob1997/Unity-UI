@@ -12,6 +12,10 @@ public class UiPreferences : ScriptableObject
     public float defaultFullTransitionTime = .5f;
     
     public ColorPalette defaultColorPalette;
+    public ButtonProfile defaultButtonProfile;
+    
+    public FontProfile defaultFontProfile;
+    public FontGroup defaultFontGroup;
 
     public List<UiConstants.UiMenu> startingMenus;
     
